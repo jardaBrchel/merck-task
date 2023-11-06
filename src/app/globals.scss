@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'font-awesome/css/font-awesome.min.css';
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #f0f2f5;
+}
+
+.ant-layout {
+    background: transparent;
+}
+
+.ant-layout-header {
+    text-align: left;
+    color: #333;
+    height: 64px;
+    line-height: 64px;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 26px;
+    box-shadow: 0 5px 5px #ECECEC;
+    margin-bottom: 20px;
+}
+
+.ant-layout-content {
+    color: #000;
+    width: 1340px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.ant-card {
+    .ant-card-body {
+        padding: 0;
+    }
+}
+
+.ant-badge {
+    .ant-badge-multiple-words {
+        padding: 0 5px;
+    }
+}
