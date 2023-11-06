@@ -2,7 +2,7 @@ import {faArrowAltCircleDown, faFileLines, faBarChart} from '@fortawesome/free-r
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { Badge } from 'antd';
 
-export const CustomButton = ({label, icon, badge}: {label: string, icon?: string, badge?: string}) => {
+export const CustomButton = ({label, icon, badge}: {label: string, icon?: string, badge?: number}) => {
     const ButtonIcon = {
         'download': faArrowAltCircleDown,
         'notes': faFileLines,
