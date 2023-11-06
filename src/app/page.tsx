@@ -2,7 +2,7 @@
 
 import { Layout, Space, Col, Row } from 'antd';
 import {CustomCard} from '../components/Card';
-import {CustomButton} from '../components/Button';
+import {ButtonType, CustomButton} from '../components/Button';
 
 const { Header, Content } = Layout;
 
@@ -21,9 +21,9 @@ export default function Home() {
                       <Col span={24} className={'flex justify-between items-center'}>
                           <h1 className={'text-xl'}>Page title</h1>
                           <section className={'flex gap-4'}>
-                              <CustomButton label="Export to PDF" icon={'download'} />
-                              <CustomButton label="Notes (3)" icon={'notes'} />
-                              <CustomButton label="Filter" badge={14} icon={'filter'} />
+                              <CustomButton label="Export to PDF" icon={ButtonType.Download} />
+                              <CustomButton label="Notes (3)" icon={ButtonType.Notes} />
+                              <CustomButton label="Filter" badge={14} icon={ButtonType.Filter} />
                           </section>
                       </Col>
                   </Row>
