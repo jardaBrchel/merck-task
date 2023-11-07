@@ -1,4 +1,3 @@
-
 import {Card} from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage } from '@fortawesome/free-regular-svg-icons'
