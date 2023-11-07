@@ -1,10 +1,13 @@
 import { Layout, Space, Col, Row } from 'antd';
 import {CustomCard} from '../components/Card';
 import {ButtonType, CustomButton} from '../components/Button';
+import { trpc } from '@/utils/trpc';
 
 const { Header, Content } = Layout;
 
 export default function Index() {
+    const chartData = trpc.getChartData.useQuery();
+
     return (
         <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
             <Layout>
