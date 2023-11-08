@@ -9,7 +9,7 @@ export const CustomCard = ({children, title}: {children: any, title: string}) =>
                 {children}
             </section>
             <section className="border-t border-[#f0f0f0] px-4 py-2 flex justify-between items-center">
-                <div className={'h-6 w-6 bg-blue-300 rounded-full'}></div>
+                <img src="/avatar.png" className={'h-6 w-6 bg-blue-300 rounded-full'} alt=""/>
                 <div>3 <FontAwesomeIcon icon={faMessage} /></div>
             </section>
         </Card>

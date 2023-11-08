@@ -25,7 +25,6 @@ export async function getChartData() {
     const response = (await fetchData(
         structure,
     )) as ApiResponse<CovidDataResponse>;
-    console.log('response', response);
 
     return response.data;
 }

@@ -12,6 +12,6 @@ export type Variant = {
 
 export type CovidDataResponse = {
     date: string;
-    hospitalCasesWeekly?: number;
-    variants?: Variant[];
+    hospitalCasesWeekly: number;
+    variants: Variant[];
 };

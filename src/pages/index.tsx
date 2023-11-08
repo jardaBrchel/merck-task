@@ -1,13 +1,12 @@
 import { Layout, Space, Col, Row } from 'antd';
 import {CustomCard} from '../components/Card';
 import {ButtonType, CustomButton} from '../components/Button';
-import { trpc } from '@/utils/trpc';
+import {PieChart} from '../components/PieChart';
+import {LineChart} from '../components/LineChart';
 
 const { Header, Content } = Layout;
 
 export default function Index() {
-    const chartData = trpc.getChartData.useQuery();
-
     return (
         <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
             <Layout>
@@ -29,13 +28,13 @@ export default function Index() {
                     </Row>
                     <Row gutter={[32, 16]}>
                         <Col span={12}>
-                            <CustomCard title={'Chart title'}>
-                                <p className={'text-red-400'}>Card content</p>
+                            <CustomCard title={'Covid variants [%]'}>
+                                <PieChart />
                             </CustomCard>
                         </Col>
                         <Col span={12}>
-                            <CustomCard title={'Chart title'}>
-                                <p className={'text-red-400'}>Card content</p>
+                            <CustomCard title={'Hospital cases weekly'}>
+                                <LineChart />
                             </CustomCard>
                         </Col>
                     </Row>
