@@ -1,8 +1,8 @@
 import { Layout, Space, Col, Row } from 'antd';
 import {CustomCard} from '../components/Card';
-import {ButtonType, CustomButton} from '../components/Button';
 import {PieChart} from '../components/PieChart';
 import {LineChart} from '../components/LineChart';
+import {ActionBar} from '../components/ActionBar';
 
 const { Header, Content } = Layout;
 
@@ -16,16 +16,7 @@ export default function Index() {
                     </Row>
                 </Header>
                 <Content>
-                    <Row className={'pb-[20px]'}>
-                        <Col span={24} className={'flex justify-between items-center'}>
-                            <h1 className={'text-xl'}>Page title</h1>
-                            <section className={'flex gap-4'}>
-                                <CustomButton label="Export to PDF" icon={ButtonType.Download} />
-                                <CustomButton label="Notes (3)" icon={ButtonType.Notes} />
-                                <CustomButton label="Filter" badge={14} icon={ButtonType.Filter} />
-                            </section>
-                        </Col>
-                    </Row>
+                    <ActionBar />
                     <Row gutter={[32, 16]}>
                         <Col span={12}>
                             <CustomCard title={'Covid variants [%]'}>
