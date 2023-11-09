@@ -1,4 +1,7 @@
 import {ApiParamStructure, ApiResponse, CovidDataResponse} from './api.model';
+import { kv } from "@vercel/kv";
+import {PieChartId} from '../components/PieChart';
+import {LineChartId} from '../components/LineChart';
 
 export async function fetchData(
     structure: ApiParamStructure,
@@ -15,7 +18,7 @@ export async function fetchData(
     return fetch(url).then((res) => res.json());
 }
 
-export async function getChartData() {
+export async function getChartData(): Promise<CovidDataResponse[]> {
     const structure = {
         date: 'date',
         variants: 'variants',
@@ -27,4 +30,18 @@ export async function getChartData() {
     )) as ApiResponse<CovidDataResponse>;
 
     return response.data;
+}
+
+export async function getLikes(): Promise<{ 'pie-chart': boolean; 'line-chart': boolean }> {
+    const pieChartLikes = await kv.get<boolean>(PieChartId);
+    const lineChartLikes = await kv.get<boolean>(LineChartId);
+
+    return {
+        'pie-chart': pieChartLikes || false,
+        'line-chart': lineChartLikes || false,
+    };
+}
+
+export async function putLikes({id, value}: { id: string, value: boolean }) {
+    await kv.set(id, value);
 }

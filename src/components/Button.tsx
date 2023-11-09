@@ -10,7 +10,13 @@ export enum ButtonType {
 
 const mainColor = '#019875'
 
-export const CustomButton = ({label, icon, badge}: {label: string, icon?: ButtonType, badge?: number}) => {
+type CustomButtonProps = {
+    label: string;
+    icon?: ButtonType;
+    badge?: number;
+}
+
+export const CustomButton = ({label, icon, badge}: CustomButtonProps) => {
     const ButtonIcon = {
         'download': faArrowAltCircleDown,
         'notes': faFileLines,

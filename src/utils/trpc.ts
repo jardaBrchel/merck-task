@@ -23,4 +23,12 @@ export const trpc = createTRPCNext<AppRouter>({
         };
     },
     ssr: false,
+    overrides: {
+        useMutation: {
+            async onSuccess(opts) {
+                await opts.originalFn();
+                await opts.queryClient.invalidateQueries();
+            },
+        },
+    },
 });

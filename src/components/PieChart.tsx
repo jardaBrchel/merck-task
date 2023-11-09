@@ -3,6 +3,7 @@ import {getVariationsFromResponse} from '../api/api.utils';
 import {trpc} from '../utils/trpc';
 
 export type PieChartItem = { id: string; value: number };
+export const PieChartId = 'pie-chart';
 
 export function PieChart() {
   // Get data from API

@@ -3,6 +3,7 @@ import {trpc} from '../utils/trpc';
 import {getHospitalisationsFromResponse} from '../api/api.utils';
 
 export type LineChartItem = { x: string; y: number };
+export const LineChartId = 'line-chart';
 
 export function LineChart() {
     // Get data from API
