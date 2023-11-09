@@ -8,8 +8,13 @@ import {trpc} from '../utils/trpc';
 const {Header, Content} = Layout;
 
 export default function Index() {
+    const utils = trpc.useUtils();
     const likesData = trpc.getLikes.useQuery();
-    const setLike = trpc.putLikes.useMutation();
+    const setLike = trpc.putLikes.useMutation({
+        onSuccess() {
+            utils.getLikes.invalidate();
+        }
+    });
 
     const handleCardLike = (id: string, value: boolean) => {
         setLike.mutate({id, value});
