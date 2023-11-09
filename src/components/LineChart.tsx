@@ -27,12 +27,6 @@ const setUpChart = ( data: LineChartItem[]) => {
         const chart = new AntvG2.Chart({
             container: container,
             autoFit: true,
-            options: {
-                slider: {
-                    start: 0,
-                    end: 1,
-                },
-            }
         });
 
         chart.data(data);
